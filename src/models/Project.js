@@ -7,6 +7,7 @@ const Project = model('Project', new Schema(
             {
                 id: String,
                 name: String,
+                imgUrl: String,
 
                 initialViewParameters: {
                     yaw: Number,
