@@ -12,6 +12,7 @@ var Project = (0, _mongoose.model)('Project', new _mongoose.Schema({
   scenes: [{
     id: String,
     name: String,
+    imgUrl: String,
     initialViewParameters: {
       yaw: Number,
       pitch: Number,
