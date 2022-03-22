@@ -3,7 +3,7 @@ import Project from '../models/Project';
 
 export const getAllProjects = async (req, res) => {
     try {
-        const findedProject = await Project.find({}).exec();
+        const findedProject = await Project.find({}, '_id name updatedAt').exec();
 
         res.status(200).json(findedProject);
 
