@@ -132,33 +132,37 @@ exports.saveProject = saveProject;
 
 var updateProject = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
-    var _req$params, savedProject;
+    var _req$params, _req$body2, scenes, name, savedProject;
 
     return _regenerator["default"].wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.prev = 0;
-            _context4.next = 3;
-            return _Project["default"].findByIdAndUpdate((_req$params = req.params) === null || _req$params === void 0 ? void 0 : _req$params.id, req.body);
+            _req$body2 = req.body, scenes = _req$body2.scenes, name = _req$body2.name;
+            _context4.next = 4;
+            return _Project["default"].findByIdAndUpdate((_req$params = req.params) === null || _req$params === void 0 ? void 0 : _req$params.id, {
+              scenes: scenes,
+              name: name
+            });
 
-          case 3:
+          case 4:
             savedProject = _context4.sent;
             res.status(200).json(savedProject);
-            _context4.next = 10;
+            _context4.next = 11;
             break;
 
-          case 7:
-            _context4.prev = 7;
+          case 8:
+            _context4.prev = 8;
             _context4.t0 = _context4["catch"](0);
             res.status(400).json(_context4.t0);
 
-          case 10:
+          case 11:
           case "end":
             return _context4.stop();
         }
       }
-    }, _callee4, null, [[0, 7]]);
+    }, _callee4, null, [[0, 8]]);
   }));
 
   return function updateProject(_x7, _x8) {
