@@ -42,9 +42,7 @@ export const updateProject = async (req, res) => {
 
     try {
         const { scenes, name } = req.body;
-        console.log({ scenes, name });
         const savedProject = await Project.findByIdAndUpdate(req.params?.id, { scenes, name });
-        console.log(savedProject);
         res.status(200).json(savedProject);
     } catch (error) {
         res.status(400).json(error);
